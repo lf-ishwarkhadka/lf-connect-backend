@@ -20,8 +20,8 @@ app.post("/send-email", async (req, res) => {
   const { name, role, email, phone, organization, message } = req.body;
 
   const msg = {
-    to: "rashikkoirala@lftechnology.com", // Your company's email
-    from: "rashikkoirala@lftechnology.com", // This can be any valid email
+    to: process.env.EMAIL, // Your company's email
+    from: process.env.EMAIL, // This can be any valid email
     subject: "New Form Submission",
     text: `Name: ${name}\n Role: ${role}\nEmail: ${email}\nPhone Number: ${phone}\nOrganization: ${organization}\nMessage: ${message}`,
   };
